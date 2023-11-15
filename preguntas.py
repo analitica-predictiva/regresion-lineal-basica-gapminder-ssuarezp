@@ -5,6 +5,7 @@ Regresión Lineal Univariada
 En este laboratio se construirá un modelo de regresión lineal univariado.
 
 """
+from xml.etree.ElementPath import xpath_tokenizer_re
 import numpy as np
 import pandas as pd
 
@@ -47,13 +48,13 @@ def pregunta_02():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv("gm_2008_region.csv")
+    df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Imprima las dimensiones del DataFrame
     print(df.shape)
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print(f['life'].corr(df['fertility']).round(4))
+    print(df['life'].corr(df['fertility']).round(4))
 
     # Imprima la media de la columna `life` con 4 decimales.
     print(df['life'].mean().round(4))
